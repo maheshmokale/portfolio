@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import { themes } from "./theme";
+import { GlobalStyles } from "./global";
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
+import "./App.css";
+import Main from "./pages/Main";
+import CustomCursor from "./animationcomponents/cursor/CustomCursor";
+
+import "./App.css";
 function App() {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+
+    <ThemeProvider theme={themes[theme]}>
+      <>
+        <a data-tooltip-id="my-tooltip" data-tooltip-content="Hello world!">
+          Test
         </a>
-      </header>
-    </div>
+        <GlobalStyles />
+        <div>
+          <CustomCursor />
+          <Tooltip id="my-tooltip" />
+          <Main theme={themes[theme]} setTheme={setTheme} />
+        </div>
+
+      </>
+    </ThemeProvider>
+
+
   );
+
 }
 
 export default App;
