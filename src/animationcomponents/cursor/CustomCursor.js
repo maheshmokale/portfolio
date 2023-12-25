@@ -6,17 +6,17 @@ import AnimatedCursor from "react-animated-cursor";
 const CustomCursor = () => {
     return (
         <AnimatedCursor
-            innerSize={8}
-            outerSize={30}
+            innerSize={7}
+            outerSize={25}
             innerScale={2}
             outerScale={2}
             outerAlpha={0}
             hasBlendMode={true}
             innerStyle={{
-                backgroundColor: 'cyan' // Change the background color to blue using hex code
+                backgroundColor: '#FD0664' // Change the background color to blue using hex code
             }}
             outerStyle={{
-                border: '3px solid yellow' // Change the border color to blue using hex code
+                border: '3px solid #FD0664' // Change the border color to blue using hex code
             }}
         />
     );

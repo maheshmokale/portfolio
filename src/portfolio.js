@@ -10,7 +10,6 @@ const greeting = {
   title: "Hi",
   title2: " I'm Mahesh Mokale",
   logo_name: "Mahesh Mokale",
-  // nickname: "harry / picleric",
   full_name: "Mahesh Mokale",
   subTitle1: "Full Stack Developer.",
   subTitle2: "Life Long Learner.",
